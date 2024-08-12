@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .mabinogi-cooking-recipe {
+      background-color: #fff;
+      width: 775px;
+      border-spacing: 3px;
+    }
+    .mabinogi-cooking-recipe tr th{
+      width: 36px;
+      height: 1px;
+      background-color: transparent;
+      visibility: hidden;
+    }
+    .mabinogi-cooking-recipe tr th:first-child {
+      width: 190px;
+    }
+    .mabinogi-cooking-recipe tr td {
+      height: 34px
+    }
+    .mabinogi-cooking-recipe tr td {
+      background-color: #EFEFEF;
+      color: #101010;
+      font-size: 14px;
+    }
+    .mabinogi-cooking-recipe tr td.mb-center {
+      text-align: center;
+    }
+    .mabinogi-cooking-recipe tr td.mb-label {
+      background-color: #93D2F3;
+      font-weight: bold;
+      text-align: center;
+    }
+    .mabinogi-cooking-recipe tr td.mb-mini-label {
+      background-color: #93D2F3;
+      text-align: center;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+<noinclude>
+  == 使用说明 ==
+  请将以下代码插入到页面：
+  <pre style="border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
+  {{CookingRecipe
+  |图片=Example.jpg
+  |名称=名称
+  |可否制作=true
+  |英文名称=英文名称
+  |饱食度=20
+  |售卖NPC=
+  |经验值=10000
+  |制作方式=烹饪
+  |持续时间=1200
+  |占用格子=1x2
+  |料理描述=这是描述
+  |材料1=材料1
+  |含量1=1
+  |材料2=材料2
+  |含量2=1
+  |材料3=材料3
+  |含量3=1
+  |体重=+1
+  |上半身=+2
+  |下半身=+0
+  |最大生命=+1
+  |最大魔法=+1
+  |最大体力=+1
+  |力量=+1
+  |智力=+1
+  |敏捷=+1
+  |意志=+1
+  |幸运=+1
+  |最大伤害=+1
+  |最小伤害=+1
+  |魔攻=+1
+  |防御=+1
+  |保护=+1
+  |魔防=+1
+  |魔保=+1
+  }}
+  </pre>
+
+  == 示例 ==
+</noinclude>
+<table class="mabinogi-cooking-recipe">
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td rowspan="4" class="mb-center">{{#if: {{{图片|}}} | [[File:{{{图片}}}|thumb|center|alt=Image]] }}</td>
+    <td colspan="3" class="mb-label">名称</td>
+    <td colspan="6">{{{名称}}}</td>
+    <td colspan="3" class="mb-label">可否制作</td>
+    <td colspan="3">{{#ifeq: {{{可否制作|}}} | true | 是 | 否 }}</td>
+  </tr>
+  <tr>
+    <td colspan="3" class="mb-label">英文名称</td>
+    <td colspan="6">{{{英文名称}}}</td>
+    <td colspan="3" class="mb-label">饱食度</td>
+    <td colspan="3">{{{饱食度}}}</td>
+  </tr>
+  <tr>
+    <td colspan="3" class="mb-label">售卖NPC</td>
+    <td colspan="6">{{{售卖NPC}}}</td>
+    <td colspan="3" class="mb-label">经验值</td>
+    <td colspan="3">{{{经验值}}}</td>
+  </tr>
+  <tr>
+    <td colspan="3" class="mb-label">制作方式</td>
+    <td colspan="6">{{{制作方式}}}</td>
+    <td colspan="3" class="mb-label">持续时间</td>
+    <td colspan="3">{{{持续时间}}}</td>
+  </tr>
+  <tr>
+    <td class="mb-label">{{{占用格子}}}</td>
+    <td colspan="15" class="mb-label">料理配方</td>
+  </tr>
+  <tr>
+    <td rowspan="6" class="mb-center">{{{料理描述}}}</td>
+    <td colspan="5" class="mb-center">{{#if:{{{材料1|}}}|[[{{{材料1}}}]]}}{{#if:{{{含量1|}}}|（{{{含量1}}}%）}}</td>
+    <td colspan="5" class="mb-center">{{#if:{{{材料2|}}}|[[{{{材料2}}}]]}}{{#if:{{{含量2|}}}|（{{{含量2}}}%）}}</td>
+    <td colspan="5" class="mb-center">{{#if:{{{材料3|}}}|[[{{{材料3}}}]]}}{{#if:{{{含量3|}}}|（{{{含量3}}}%）}}</td>
+  </tr>
+  <tr>
+    <td colspan="15" class="mb-label">料理增加体型信息</td>
+  </tr>
+  <tr>
+    <td colspan="5" class="mb-center">体重{{{体重|+0}}}</td>
+    <td colspan="5" class="mb-center">上半身{{{上半身|+0}}}</td>
+    <td colspan="5" class="mb-center">下半身{{{下半身|+0}}}</td>
+  </tr>
+  <tr>
+    <td colspan="15" class="mb-label">料理增加素质信息</td>
+  </tr>
+  <tr>
+    <td class="mb-mini-label">最大生命</td>
+    <td class="mb-mini-label">最大魔法</td>
+    <td class="mb-mini-label">最大体力</td>
+    <td class="mb-mini-label">力量</td>
+    <td class="mb-mini-label">智力</td>
+    <td class="mb-mini-label">敏捷</td>
+    <td class="mb-mini-label">意志</td>
+    <td class="mb-mini-label">幸运</td>
+    <td class="mb-mini-label">最大伤害</td>
+    <td class="mb-mini-label">最小伤害</td>
+    <td class="mb-mini-label">魔攻</td>
+    <td class="mb-mini-label">防御</td>
+    <td class="mb-mini-label">保护</td>
+    <td class="mb-mini-label">魔防</td>
+    <td class="mb-mini-label">魔保</td>
+  </tr>
+  <tr>
+    <td class="mb-center">{{{最大生命}}}</td>
+    <td class="mb-center">{{{最大魔法}}}</td>
+    <td class="mb-center">{{{最大体力}}}</td>
+    <td class="mb-center">{{{力量}}}</td>
+    <td class="mb-center">{{{智力}}}</td>
+    <td class="mb-center">{{{敏捷}}}</td>
+    <td class="mb-center">{{{意志}}}</td>
+    <td class="mb-center">{{{幸运}}}</td>
+    <td class="mb-center">{{{最大伤害}}}</td>
+    <td class="mb-center">{{{最小伤害}}}</td>
+    <td class="mb-center">{{{魔攻}}}</td>
+    <td class="mb-center">{{{防御}}}</td>
+    <td class="mb-center">{{{保护}}}</td>
+    <td class="mb-center">{{{魔防}}}</td>
+    <td class="mb-center">{{{魔保}}}</td>
+  </tr>
+</table>
+</body>
+</html>
