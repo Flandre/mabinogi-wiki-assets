@@ -1,0 +1,18 @@
+{
+  "name": "mabinogi-wiki-assets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "lodash": "^4.17.21",
+    "mediawiki": "^0.0.14",
+    "path-extra": "^4.3.0",
+    "xml2js": "^0.6.2"
+  }
+}
