@@ -47,7 +47,7 @@
   请将以下代码插入到页面：
   <pre style="border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
   {{CookingRecipe
-  |图片=Example.jpg
+  |图片=Example.png
   |名称=名称
   |可否制作=true
   |英文名称=英文名称
@@ -107,36 +107,36 @@
     <th></th>
   </tr>
   <tr>
-    <td rowspan="4" class="mb-center">{{#if: {{{图片|}}} | [[File:{{{图片}}}|thumb|center|alt=Image]] }}</td>
+    <td rowspan="4" class="mb-center">{{#if: {{{图片|}}} | [[File:{{{图片}}}|center|alt={{{图片}}}]] }}</td>
     <td colspan="3" class="mb-label">名称</td>
-    <td colspan="6">{{{名称}}}</td>
+    <td colspan="6">{{{名称|}}}</td>
     <td colspan="3" class="mb-label">可否制作</td>
     <td colspan="3">{{#ifeq: {{{可否制作|}}} | true | 是 | 否 }}</td>
   </tr>
   <tr>
     <td colspan="3" class="mb-label">英文名称</td>
-    <td colspan="6">{{{英文名称}}}</td>
+    <td colspan="6">{{{英文名称|}}}</td>
     <td colspan="3" class="mb-label">饱食度</td>
-    <td colspan="3">{{{饱食度}}}</td>
+    <td colspan="3">{{{饱食度|}}}</td>
   </tr>
   <tr>
     <td colspan="3" class="mb-label">售卖NPC</td>
-    <td colspan="6">{{{售卖NPC}}}</td>
+    <td colspan="6">{{{售卖NPC|}}}</td>
     <td colspan="3" class="mb-label">经验值</td>
-    <td colspan="3">{{{经验值}}}</td>
+    <td colspan="3">{{{经验值|}}}</td>
   </tr>
   <tr>
     <td colspan="3" class="mb-label">制作方式</td>
-    <td colspan="6">{{{制作方式}}}</td>
+    <td colspan="6">{{{制作方式|}}}</td>
     <td colspan="3" class="mb-label">持续时间</td>
-    <td colspan="3">{{{持续时间}}}</td>
+    <td colspan="3">{{{持续时间|}}}</td>
   </tr>
   <tr>
-    <td class="mb-label">{{{占用格子}}}</td>
+    <td class="mb-label">{{{占用格子|}}}</td>
     <td colspan="15" class="mb-label">料理配方</td>
   </tr>
   <tr>
-    <td rowspan="6" class="mb-center">{{{料理描述}}}</td>
+    <td rowspan="6" class="mb-center">{{{料理描述|}}}</td>
     <td colspan="5" class="mb-center">{{#if:{{{材料1|}}}|[[{{{材料1}}}]]}}{{#if:{{{含量1|}}}|（{{{含量1}}}%）}}</td>
     <td colspan="5" class="mb-center">{{#if:{{{材料2|}}}|[[{{{材料2}}}]]}}{{#if:{{{含量2|}}}|（{{{含量2}}}%）}}</td>
     <td colspan="5" class="mb-center">{{#if:{{{材料3|}}}|[[{{{材料3}}}]]}}{{#if:{{{含量3|}}}|（{{{含量3}}}%）}}</td>
