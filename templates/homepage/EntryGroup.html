@@ -6,6 +6,7 @@
   <style>
 :root {
   --mabinogi-primary: #4095E5;
+  --mabinogi-danger: #d80000;
 }
 .mabinogi-entry-group {
   border-radius: 10px;
@@ -14,6 +15,9 @@
   border: 2px solid var(--mabinogi-primary);
   padding: 15px 26px 25px;
   background-color: #fff;
+}
+.mabinogi-entry-group + .mabinogi-entry-group {
+  margin-top: 18px;
 }
 .mabinogi-entry-group .mb-title {
   display: flex;
@@ -43,9 +47,9 @@
   margin-right: -15px;
   margin-top: 15px;
 }
-.mabinogi-entry-group .entry-group .entry-item {
+.mabinogi-entry-group .entry-group > a{
   font-size: 14px;
-  color: var(--mabinogi-primary);
+  color: var(--mabinogi-primary) !important;
   border-radius: 20px;
   line-height: 20px;
   padding: 6px 20px;
@@ -56,11 +60,22 @@
   margin-right: 15px;
   margin-bottom: 15px;
   cursor: pointer;
+  text-decoration: none;
 }
-.mabinogi-entry-group .entry-group .entry-item:hover {
+.mabinogi-entry-group .entry-group > a:hover {
   background-color: var(--mabinogi-primary);
-  color: #fff;
+  color: #fff !important;
 }
+
+.mabinogi-entry-group .entry-group > a.new {
+  background-color: #fff !important;
+  color: var(--mabinogi-danger) !important;
+  border-color: var(--mabinogi-danger) !important;
+}
+.mabinogi-entry-group .entry-group > a.new::before {
+  content: '待添加页面: ';
+}
+
   </style>
 </head>
 <body>
@@ -72,9 +87,7 @@
   <div class="mb-title">
     <div class="mb-title-text">{{{标题|}}}</div>
   </div>
-  <div class="entry-group">
-    {{#if: {{{1|}}}|[[{{{1}}}|<div class="entry-item">{{{1}}}</div>]]|}}{{#if: {{{2|}}} | <div class="entry-item">[[{{{2}}}]]</div> | }}{{#if: {{{3|}}} | <div class="entry-item">[[{{{3}}}]]</div> | }}{{#if: {{{4|}}} | <div class="entry-item">[[{{{4}}}]]</div> | }}{{#if: {{{5|}}} | <div class="entry-item">[[{{{5}}}]]</div> | }}{{#if: {{{6|}}} | <div class="entry-item">[[{{{6}}}]]</div> | }}{{#if: {{{7|}}} | <div class="entry-item">[[{{{7}}}]]</div> | }}{{#if: {{{8|}}} | <div class="entry-item">[[{{{8}}}]]</div> | }}{{#if: {{{9|}}} | <div class="entry-item">[[{{{9}}}]]</div> | }}{{#if: {{{10|}}} | <div class="entry-item">[[{{{10}}}]]</div> | }}{{#if: {{{11|}}} | <div class="entry-item">[[{{{11}}}]]</div> | }}{{#if: {{{12|}}} | <div class="entry-item">[[{{{12}}}]]</div> | }}{{#if: {{{13|}}} | <div class="entry-item">[[{{{13}}}]]</div> | }}{{#if: {{{14|}}} | <div class="entry-item">[[{{{14}}}]]</div> | }}{{#if: {{{15|}}} | <div class="entry-item">[[{{{15}}}]]</div> | }}{{#if: {{{16|}}} | <div class="entry-item">[[{{{16}}}]]</div> | }}{{#if: {{{17|}}} | <div class="entry-item">[[{{{17}}}]]</div> | }}{{#if: {{{18|}}} | <div class="entry-item">[[{{{18}}}]]</div> | }}{{#if: {{{19|}}} | <div class="entry-item">[[{{{19}}}]]</div> | }}{{#if: {{{20|}}} | <div class="entry-item">[[{{{20}}}]]</div> | }}
-  </div>
+  <div class="entry-group">{{#if: {{{1|}}}|[[{{{1}}}]]}}{{#if: {{{2|}}}|[[{{{2}}}]]}}{{#if: {{{3|}}}|[[{{{3}}}]]}}{{#if: {{{4|}}}|[[{{{4}}}]]}}{{#if: {{{5|}}}|[[{{{5}}}]]}}{{#if: {{{6|}}}|[[{{{6}}}]]}}{{#if: {{{7|}}}|[[{{{7}}}]]}}{{#if: {{{8|}}}|[[{{{8}}}]]}}{{#if: {{{9|}}}|[[{{{9}}}]]}}{{#if: {{{10|}}}|[[{{{10}}}]]}}{{#if: {{{11|}}}|[[{{{11}}}]]}}{{#if: {{{12|}}}|[[{{{12}}}]]}}{{#if: {{{13|}}}|[[{{{13}}}]]}}{{#if: {{{14|}}}|[[{{{14}}}]]}}{{#if: {{{15|}}}|[[{{{15}}}]]}}{{#if: {{{16|}}}|[[{{{16}}}]]}}{{#if: {{{17|}}}|[[{{{17}}}]]}}{{#if: {{{18|}}}|[[{{{18}}}]]}}{{#if: {{{19|}}}|[[{{{19}}}]]}}{{#if: {{{20|}}}|[[{{{20}}}]]}}</div>
 </div>
 </body>
 </html>
