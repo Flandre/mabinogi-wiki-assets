@@ -1,0 +1,8 @@
+:root {
+  --mabi-primary: #AADCFF;
+  --mabi-primary-darken: #1D6C95;
+  --mabi-secondary: #55AAD2;
+
+  --mabi-text: var(--mabi-primary-darken);
+  --mabi-border: var(--mabi-secondary);
+}

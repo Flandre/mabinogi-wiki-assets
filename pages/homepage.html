@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<style>
+  /* 暂时限制1200px */
+  html {
+    overflow-x: auto;
+  }
+  body {
+    min-width: 1200px;
+  }
+  .wiki-body {
+    min-width: 1200px;
+  }
+  #content p{
+    margin: 0;
+  }
+  .huiji-css-hook .wiki-body {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgba(255, 255, 255, .8);
+  }
+  .homepage-container {
+    /*width: 1280px;*/
+    box-sizing: border-box;
+  }
+  .homepage-container .main-layout {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .homepage-container .main-layout .left-container{
+    width: 330px;
+    min-height: 500px;
+    flex-shrink: 0;
+    margin-right: 20px;
+  }
+  .homepage-container .main-layout .right-container{
+    flex-grow: 1;
+    min-height: 500px;
+  }
+  #wiki-outer-body.huiji-css-hook {
+    background: url(https://huiji-public.huijistatic.com/luoqi/uploads/3/37/Illust_082_1920x1080.jpg) no-repeat fixed center;
+    background-size: cover;
+  }
+</style>
+<div id="banner-day" class="banner-source">[[文件:wiki_banner_day.jpg]]</div>
+<div id="banner-night" class="banner-source">[[文件:wiki_banner_night.jpg]]</div>
+{{#html:HomepageCss}}
+<div class="homepage-container">
+  {{#Html:HomepageBanner}}
+  <div class="main-layout">
+    <div class="left-container">
+      {{#Html:ErinnClock}}
+      <p>左侧内容</p>
+    </div>
+    <div class="right-container">右侧内容</div>
+  </div>
+</div>
+
+</body>
+</html>

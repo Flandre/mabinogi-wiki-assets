@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<link rel="stylesheet" href="../Common.css">
+<style>
+  .erinn-clock {
+    height: 68px;
+    background-color: var(--mabi-primary);
+    border: 2px solid var(--mabi-border);
+    border-radius: 18px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .erinn-clock .time {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--mabi-text);
+  }
+  .erinn-clock .paru-img{
+    width: 89px;
+    height: 46px;
+  }
+</style>
+<div class="erinn-clock mabi-panel">
+  <div class="time">
+    爱琳时间: <span id="mgbclock"></span>
+  </div>
+  <img class="paru-img" src="https://huiji-public.huijistatic.com/luoqi/uploads/a/a8/Clock-img.png" alt="">
+</div>
+<script>
+  function lqClock() {
+    //游戏信息
+    //时间校正
+    Now = new Date();
+    ServerTime = 18 * 360 + 37 * 60 + 23;
+    ClientTime = (Now.getHours()+Math.floor(Now.getTimezoneOffset()/60)+8)*360 + (Now.getMinutes()+Math.floor(Now.getTimezoneOffset()%60))*60 + Now.getSeconds();
+    DifferenceTime = (ServerTime-ClientTime)*1000;
+    if (DifferenceTime >= 82800) {DifferenceTime -= 86400;}
+    if (DifferenceTime <=-82800) {DifferenceTime += 86400;}
+    MabiServerTime = -64 * 1500;
+    DifferenceTime += MabiServerTime;
+    DifferenceTime = 0;
+
+    //取得使用者系统时间
+    var Now = new Date();
+    //取得台北时间(+8)
+    var TaipeiTime = Now.getTime();
+    //爱尔琳时间校正(Day+14 Hour-16)
+    var ErinnTime = TaipeiTime + (8*60*60*1000) + DifferenceTime;
+    //取得爱尔琳时间
+    var ErinnSeason = Math.floor((ErinnTime % (7*40*24*60*1.5*1000) / (40*24*60*1.5*1000)) + 4) % 7;
+    var ErinnDay = Math.floor(ErinnTime % (40*24*60*1.5*1000) / (24*60*1.5*1000)) + 1;
+    var ErinnHour = Math.floor((ErinnTime % (24*60*1.5*1000)) / (60*1.5*1000));
+    var ErinnMinute = Math.floor((ErinnTime % (60*1.5*1000)) / (1.5*1000));
+    if ( ErinnSeason == 0 )   {ErinnSeason = "";}
+    if ( ErinnSeason == 1 )   {ErinnSeason = "";}
+    if ( ErinnSeason == 2 )   {ErinnSeason = "<br>明天维护，请提前捡起仍地上的装备以免消失";}
+    if ( ErinnSeason == 3 )   {ErinnSeason = "";}
+    if ( ErinnSeason == 4 )   {ErinnSeason = "";}
+    if ( ErinnSeason == 5 )   {ErinnSeason = "";}
+    if ( ErinnSeason == 6 )   {ErinnSeason = "";}
+    if ( ErinnHour < 10 )   {ErinnHour = "0" + ErinnHour;}
+    if ( ErinnMinute < 10 ) {ErinnMinute = "0" + ErinnMinute;}
+
+    var mgbclock = document.getElementById('mgbclock');
+    // var imgType = document.getElementById('imgType');
+    if (mgbclock) {
+      mgbclock.innerHTML = ErinnHour + ":" + ErinnMinute;
+      // if (ErinnHour >= 6 && ErinnHour <= 18) {
+      //   imgType.innerHTML = 2;
+      // } else {
+      //   imgType.innerHTML = 1;
+      // }
+    }
+    console.log('u time');
+    console.log('lqtime');
+  }
+
+  setInterval(() => {
+    lqClock()
+  }, 1000);
+</script>
+</body>
+</html>

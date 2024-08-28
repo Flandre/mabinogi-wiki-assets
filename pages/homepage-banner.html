@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<style>
+  .banner-source {
+    display: none;
+  }
+  .homepage-banner img{
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+</style>
+<div class="homepage-banner">
+  <img id="imgContent" src="https://huiji-public.huijistatic.com/luoqi/uploads/3/31/Wiki_banner_skeleton.png" alt="banner"/>
+</div>
+<script>
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  window.onload = async function() {
+    await sleep(200);
+    console.log('load js logic');
+    const bannerDay = $('#banner-day a img')[0].src;
+    const bannerNight = $('#banner-night a img')[0].src;
+    console.log(bannerDay, bannerNight);
+
+    function switchImg(type = 'day', speedOut = 1000, speedIn = 1000) {
+      $('#imgContent').fadeOut(speedOut, function() {
+        $(this)
+          .attr('src', type === 'day' ? bannerDay : bannerNight)
+          .fadeIn(speedIn);
+      });
+    }
+    switchImg(Math.random() > 0.5 ? 'day' : 'night');
+  }
+</script>
+</body>
+</html>
