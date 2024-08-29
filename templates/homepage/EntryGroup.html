@@ -3,59 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <link rel="stylesheet" href="../../Common.css">
   <style>
-:root {
-  --mabinogi-primary: #4095E5;
-  --mabinogi-danger: #d80000;
-}
 .mabinogi-entry-group {
   border-radius: 10px;
-  background-color: rgba(255,255,255,0.9);
-  box-shadow: 0 4px 10px 0 rgba(206,206,206,0.4);
-  border: 2px solid var(--mabinogi-primary);
-  padding: 15px 26px 25px;
   background-color: #fff;
-}
-.mabinogi-entry-group + .mabinogi-entry-group {
-  margin-top: 18px;
+  box-shadow: 0px 4px 10px 0px rgba(206,206,206,0.4);
+  border: 2px solid var(--mabi-border);
+  padding: 6px;
 }
 .mabinogi-entry-group .mb-title {
-  display: flex;
-  align-items: center;
+  height: 36px;
   text-align: center;
-}
-.mabinogi-entry-group .mb-title::before,
-.mabinogi-entry-group .mb-title::after {
-  content: '';
-  flex: 1;
-  border-bottom: 1px solid var(--mabinogi-primary);
-  margin: 0 20%;
-}
-.mabinogi-entry-group .mb-title::before {
-  margin-right: 10px;
-}
-.mabinogi-entry-group .mb-title::after {
-  margin-left: 10px;
+  background-color: var(--mabi-primary);
+  border: 2px solid var(--mabi-border);
+  border-radius: 8px;
 }
 .mabinogi-entry-group .mb-title .mb-title-text {
-  font-size: 20px;
-  color: var(--mabinogi-primary);
-  white-space: nowrap;
+  line-height: 36px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--mabi-text)
 }
 .mabinogi-entry-group .entry-group {
   overflow: hidden;
-  margin-right: -15px;
+  margin-right: -12px;
   margin-top: 15px;
+  padding-left: 8px;
+  padding-right: 8px;
+  box-sizing: border-box;
 }
 .mabinogi-entry-group .entry-group > a{
   font-size: 14px;
-  color: var(--mabinogi-primary) !important;
+  color: var(--mabi-text) !important;
   border-radius: 20px;
   line-height: 20px;
   padding: 6px 20px;
   background-color: #fff;
   box-shadow: 0px 1px 3px 0px rgba(127,131,247,0.4);
-  border: 1px solid var(--mabinogi-primary);
+  border: 1px solid var(--mabi-border);
   float: left;
   margin-right: 15px;
   margin-bottom: 15px;
@@ -63,14 +49,14 @@
   text-decoration: none;
 }
 .mabinogi-entry-group .entry-group > a:hover {
-  background-color: var(--mabinogi-primary);
+  background-color: var(--mabi-primary-darken);
   color: #fff !important;
 }
 
 .mabinogi-entry-group .entry-group > a.new {
   background-color: #fff !important;
-  color: var(--mabinogi-danger) !important;
-  border-color: var(--mabinogi-danger) !important;
+  color: var(--mabi-danger) !important;
+  border-color: var(--mabi-danger) !important;
 }
 .mabinogi-entry-group .entry-group > a.new::before {
   content: '待添加页面: ';
@@ -83,7 +69,7 @@
 <noinclude>
   == 最多添加20个 ==
 </noinclude>
-<div class="mabinogi-entry-group">
+<div class="mabinogi-entry-group mabi-panel">
   <div class="mb-title">
     <div class="mb-title-text">{{{标题|}}}</div>
   </div>

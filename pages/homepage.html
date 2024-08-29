@@ -46,6 +46,9 @@
     flex-grow: 1;
     min-height: 500px;
   }
+  .mabi-panel + .mabi-panel {
+    margin-top: 16px;
+  }
   #wiki-outer-body.huiji-css-hook {
     background: url(https://huiji-public.huijistatic.com/luoqi/uploads/3/37/Illust_082_1920x1080.jpg) no-repeat fixed center;
     background-size: cover;
@@ -53,15 +56,21 @@
 </style>
 <div id="banner-day" class="banner-source">[[文件:wiki_banner_day.jpg]]</div>
 <div id="banner-night" class="banner-source">[[文件:wiki_banner_night.jpg]]</div>
-{{#html:HomepageCss}}
+{{#Html:HomepageCss}}
+{{#Html:QQgroupQR}}
 <div class="homepage-container">
   {{#Html:HomepageBanner}}
   <div class="main-layout">
     <div class="left-container">
       {{#Html:ErinnClock}}
+      {{快捷导航|标题=开发快捷入口|Html:HomepageCss|Html:HomepageBanner|Html:ErinnClock|MediaWiki:Common.css|模板:快捷导航}}
       <p>左侧内容</p>
     </div>
-    <div class="right-container">右侧内容</div>
+    <div class="right-container">
+      {{快捷导航|标题=快捷导航|月光岛攻略|界面指南|宗师系统|技能考段|特别足外派任务|骑士团训练所|组合卡|特性系统|精灵武器|评论系统|星尘系统|回音石|组合卡}}
+      {{快捷导航|标题=新手指南|回归&新人游玩参考大纲|界面指南|宗师系统|技能考段|特别足外派任务|骑士团训练所|特性系统|精灵武器|评论系统|星尘系统|回音石|组合卡|图腾系统}}
+      <p>右侧内容</p>
+    </div>
   </div>
 </div>
 
