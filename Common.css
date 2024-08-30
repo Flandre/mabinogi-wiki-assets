@@ -1,9 +1,39 @@
+/* 这里放置的CSS将应用于所有皮肤 */
 :root {
   --mabi-primary: #AADCFF;
   --mabi-primary-darken: #1D6C95;
   --mabi-secondary: #55AAD2;
   --mabi-danger: #d80000;
+  --panel-bg: rgba(245, 245, 245, 0.8);
 
   --mabi-text: var(--mabi-primary-darken);
   --mabi-border: var(--mabi-secondary);
+}
+
+/* 暂时限制1200px */
+html {
+  overflow-x: auto;
+}
+body {
+  min-width: 1200px;
+}
+.wiki-body {
+  min-width: 1200px;
+}
+/* 更改页面背景 */
+.huiji-css-hook {
+  background: url(https://huiji-public.huijistatic.com/luoqi/uploads/3/37/Illust_082_1920x1080.jpg) no-repeat fixed center;
+  background-size: cover;
+}
+/* 更改内容区域背景 */
+.huiji-css-hook .wiki-body {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgba(255, 255, 255, .8);
+}
+/* 更改页脚背景颜色 */
+.huiji-css-hook .bottom.footer {
+  background-color: var(--panel-bg);
 }

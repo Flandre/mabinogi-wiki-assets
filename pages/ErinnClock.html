@@ -73,19 +73,22 @@
     // var imgType = document.getElementById('imgType');
     if (mgbclock) {
       mgbclock.innerHTML = ErinnHour + ":" + ErinnMinute;
-      // if (ErinnHour >= 6 && ErinnHour <= 18) {
-      //   imgType.innerHTML = 2;
-      // } else {
-      //   imgType.innerHTML = 1;
-      // }
+      if (ErinnHour >= 6 && ErinnHour <= 18) {
+        window.erinnNow = 'day';
+        window.switchImg && window.switchImg('day');
+      } else {
+        window.erinnNow = 'night';
+        window.switchImg && window.switchImg('night');
+      }
     }
-    console.log('u time');
-    console.log('lqtime');
+    // console.log('u time');
+    // console.log('lqtime');
   }
 
   setInterval(() => {
     lqClock()
   }, 1000);
 </script>
+<div class="mabi-panel"></div>
 </body>
 </html>
