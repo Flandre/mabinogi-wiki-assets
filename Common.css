@@ -8,6 +8,7 @@
 
   --mabi-text: var(--mabi-primary-darken);
   --mabi-border: var(--mabi-secondary);
+  --mabi-table-header: var(--mabi-primary);
 }
 
 /* 暂时限制1200px */
@@ -36,4 +37,41 @@ body {
 /* 更改页脚背景颜色 */
 .huiji-css-hook .bottom.footer {
   background-color: var(--panel-bg);
+}
+
+/* 表格处理 */
+/* 使用折叠时禁止caption换行 */
+.mw-collapsible caption {
+  white-space: nowrap;
+}
+/* 洛奇用默认表格 */
+table.mabi-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #FFF;
+  color: var(--mabi-text);
+  margin: 1em 0;
+}
+table.mabi-table caption {
+  font-weight: bold;
+  color: var(--mabi-text);
+}
+table.mabi-table tr,
+table.mabi-table th,
+table.mabi-table td{
+  border: 1px solid var(--mabi-border);
+}
+table.mabi-table th,
+table.mabi-table td{
+  padding: 0.2em 0.4em;
+}
+table.mabi-table th,
+table.mabi-table.left-header tr > td:first-child{
+  background-color: var(--mabi-table-header);
+  text-align: center;
+  font-weight: bold;
+}
+table.mabi-table.all-center th,
+table.mabi-table.all-center td{
+  text-align: center;
 }
