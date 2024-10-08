@@ -75,3 +75,74 @@ table.mabi-table.all-center th,
 table.mabi-table.all-center td{
   text-align: center;
 }
+
+/* 洛奇用标题样式 */
+#wiki-body h1 {
+  font-size: 2em;
+  color: var(--mabi-text);
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+#wiki-body h2 {
+  font-size: 1.8em;
+  color: var(--mabi-text);
+  font-weight: bold;
+  margin: 1em 0;
+  border-bottom: 1px solid var(--mabi-border) !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 0.2em;
+}
+
+#wiki-body h2::before {
+  content: '';
+  display: block;
+  background-image: url('/wiki/Special:FilePath/标题元素1.png');
+  background-size: 1.5em 1.5em; /* 控制图片宽高 */
+  width: 1.5em; /* 设置图片宽度 */
+  height: 1.5em; /* 设置图片高度 */
+  margin-right: 10px; /* 设置图片和文字的间距 */
+}
+
+#wiki-body h3 {
+  font-size: 1.5em;
+  color: var(--mabi-text);
+  font-weight: bold;
+  margin: 0.5em 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#wiki-body h3::before {
+  content: '';
+  display: block;
+  background-image: url('/wiki/Special:FilePath/标题元素2.png');
+  background-size: 1em 1em; /* 控制图片宽高 */
+  width: 1em; /* 设置图片宽度 */
+  height: 1em; /* 设置图片高度 */
+  margin-right: 5px; /* 设置图片和文字的间距 */
+  flex-shrink: 0;
+}
+
+#wiki-body h4 {
+  font-size: 1em;
+  color: var(--mabi-text);
+  font-weight: bold;
+  margin: 0.3em 0;
+}
+
+#wiki-body h5 {
+  font-size: 1em;
+  color: var(--mabi-text);
+  margin: 0.1em 0;
+}
+#wiki-body .mw-headline {
+  line-height: 1.2
+}
+#wiki-body .mw-body-content img {
+  max-width: 100%;
+  height: auto;
+}
