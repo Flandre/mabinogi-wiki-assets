@@ -78,39 +78,35 @@ table.mabi-table.all-center td{
 
 /* 洛奇用标题样式 */
 #wiki-body h1 {
-  font-size: 2em;
+  font-size: 32px;
   color: var(--mabi-text);
   font-weight: bold;
-  margin: 1em 0;
 }
 
 #wiki-body h2 {
-  font-size: 1.8em;
+  font-size: 28px;
   color: var(--mabi-text);
   font-weight: bold;
-  margin: 1em 0;
   border-bottom: 1px solid var(--mabi-border) !important;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-bottom: 0.2em;
 }
 
 #wiki-body h2::before {
   content: '';
   display: block;
   background-image: url('/wiki/Special:FilePath/标题元素1.png');
-  background-size: 1.5em 1.5em; /* 控制图片宽高 */
-  width: 1.5em; /* 设置图片宽度 */
-  height: 1.5em; /* 设置图片高度 */
+  background-size: 40px 40px; /* 控制图片宽高 */
+  width: 40px; /* 设置图片宽度 */
+  height: 40px; /* 设置图片高度 */
   margin-right: 10px; /* 设置图片和文字的间距 */
 }
 
 #wiki-body h3 {
-  font-size: 1.5em;
+  font-size: 24px;
   color: var(--mabi-text);
   font-weight: bold;
-  margin: 0.5em 0;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -120,24 +116,22 @@ table.mabi-table.all-center td{
   content: '';
   display: block;
   background-image: url('/wiki/Special:FilePath/标题元素2.png');
-  background-size: 1em 1em; /* 控制图片宽高 */
-  width: 1em; /* 设置图片宽度 */
-  height: 1em; /* 设置图片高度 */
+  background-size: 20px 20px; /* 控制图片宽高 */
+  width: 20px; /* 设置图片宽度 */
+  height: 20px; /* 设置图片高度 */
   margin-right: 5px; /* 设置图片和文字的间距 */
   flex-shrink: 0;
 }
 
 #wiki-body h4 {
-  font-size: 1em;
+  font-size: 16px;
   color: var(--mabi-text);
   font-weight: bold;
-  margin: 0.3em 0;
 }
 
 #wiki-body h5 {
-  font-size: 1em;
+  font-size: 16px;
   color: var(--mabi-text);
-  margin: 0.1em 0;
 }
 #wiki-body .mw-headline {
   line-height: 1.2
@@ -145,4 +139,39 @@ table.mabi-table.all-center td{
 #wiki-body .mw-body-content img {
   max-width: 100%;
   height: auto;
+}
+/* 追加内容区全局缩进 */
+.mw-body-content {
+  padding-left: 50px;
+}
+.mw-body-content h2{
+  margin-left: -50px !important;
+}
+.mw-body-content h3{
+  margin-left: -25px !important;
+}
+
+.max-width-none{
+  max-width:none !important;
+}
+
+/* 悬浮窗 */
+.ci{
+  position: relative;
+}
+
+.cinfo {
+  display:none;
+  position: absolute;
+  width: 250px;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -115px;
+  padding: 3px;
+  border: solid 1px #52534c;
+  text-align:left;
+}
+
+.ci:hover .cinfo{
+  display:inline-block;
 }
